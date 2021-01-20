@@ -7,6 +7,7 @@ class Planet:
         self.humanity = True
         self.oxygen = True
         self.water = False
+        self.population = True
         self.temp = 0
 
     def set_humanity(self):
@@ -15,6 +16,15 @@ class Planet:
             self.oxygen = False
         else:
             self.humanity = True
+
+    def set_population(self,quantity):
+        if self.population:
+            self.humanity = True
+            self.population = True
+            self.population += quantity
+        else:
+            self.humanity = False
+
 
     def set_water(self):
         if self.size == 'middle' or self.size == 'great':
@@ -34,3 +44,5 @@ planet.set_humanity()
 print(planet.humanity)
 planet.set_water()
 print(planet.water)
+planet.set_population(50)
+print(planet.population)
